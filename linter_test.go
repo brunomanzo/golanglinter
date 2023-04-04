@@ -1,4 +1,4 @@
-package linter
+package linters
 
 import (
 	"os"
@@ -14,6 +14,6 @@ func TestAll(t *testing.T) {
 		t.Fatalf("Failed to get wd: %s", err)
 	}
 
-	testdata := filepath.Join(filepath.Dir(filepath.Dir(wd)), "golanglinter/testdata")
+	testdata := filepath.Join(filepath.Dir(wd), "/testdata")
 	analysistest.Run(t, testdata, NewAnalyzer(), "devprodvalidations")
 }
