@@ -194,7 +194,7 @@ func run(pass *analysis.Pass) (interface{}, error) {
 			if singlePublic && functionCode.isPublic() {
 				singlePublic = false
 			} else if functionCode.isPublic() {
-				pass.Reportf(functionCode.Node.Pos(), "More than 1 public function")
+				//pass.Reportf(functionCode.Node.Pos(), "More than 1 public function")
 			}
 
 			if !functionCode.receiverIsCorret(structCode.Name) {
@@ -217,6 +217,16 @@ func run(pass *analysis.Pass) (interface{}, error) {
 		}
 	}
 	return nil, nil
+}
+
+func countUppercase(s string) int {
+	count := 0
+	for _, ch := range s {
+		if unicode.IsUpper(ch) {
+			count++
+		}
+	}
+	return count
 }
 
 func hasFmtOrLogCall(f *ast.FuncDecl) *ast.Node {
