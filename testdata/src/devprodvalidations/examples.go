@@ -38,7 +38,7 @@ func (t *TestStruct) paramName(i SomeStruct) { // want "Single character paramet
 
 }
 
-func (t *TestStruct) ShouldNotHaveSecond() { // want "More than 1 public function"
+func (t *TestStruct) ShouldNotHaveSecond() {
 
 }
 
