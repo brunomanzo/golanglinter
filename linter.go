@@ -53,12 +53,6 @@ func (f *FunctionCode) receiverIsCorret(structName string) bool {
 	return firstLetter1 == strings.ToLower(firstLetter2)
 }
 
-var TodoAnalyzer = &analysis.Analyzer{
-	Name: "devprod",
-	Doc:  "finds todos without author",
-	Run:  run,
-}
-
 //nolint:gochecknoglobals
 var flagSet flag.FlagSet
 
